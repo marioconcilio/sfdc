@@ -24,7 +24,7 @@ cd sfdc
 
 ## Steps
 
-### Authorize to your Developer Hub (Dev Hub) org.
+### Authorize to your Developer Hub (Dev Hub) org
 
 ```
 sfdx force:auth:web:login -d -a "DevHub"
@@ -36,7 +36,7 @@ If you already have an authorized Dev Hub, set it as the default:
 sfdx force:config:set defaultdevhubusername=<username|alias>
 ```
 
-### Create a scratch org.
+### Create a scratch org
 
 ```
 sfdx force:org:create -s -f config/project-scratch-def.json
@@ -46,6 +46,12 @@ If you want to use an existing scratch org, set it as the default:
 
 ```
 sfdx force:config:set defaultusername=<username|alias>
+```
+
+### Push your source
+
+```
+sfdx force:source:push
 ```
 
 ## Resources
