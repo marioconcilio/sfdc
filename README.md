@@ -22,6 +22,20 @@ git clone git@github.com:marioconcilio/sfdc.git
 cd sfdc
 ```
 
+## Steps
+
+Authorize to your Developer Hub (Dev Hub) org.
+
+```
+sfdx force:auth:web:login -d -a "DevHub"
+```
+
+If you already have an authorized Dev Hub, set it as the default:
+
+```
+sfdx force:config:set defaultdevhubusername=<username|alias>
+```
+
 ## Resources
 
 For details on using SFDX, please visit [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev).
