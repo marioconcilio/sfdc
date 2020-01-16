@@ -2,6 +2,26 @@
 
 This repository contains the source of an example SFDX project.
 
+## Set Up the Salesforce DX Project
+
+It starts by cloning the repository. Use the command...
+
+```
+git clone https://github.com/marioconcilio/sfdc.git
+```
+
+or...
+
+```
+git clone git@github.com:marioconcilio/sfdc.git
+```
+
+...to clone the repository. Then, open the directory.
+
+```
+cd sfdc
+```
+
 ## Resources
 
 For details on using SFDX, please visit [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev).
