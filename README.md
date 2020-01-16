@@ -1,4 +1,4 @@
-# Salesforce DX Simple App
+# Salesforce DX Sample App
 
 This repository contains the source of an example SFDX project.
 
