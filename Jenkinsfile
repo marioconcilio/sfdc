@@ -1,6 +1,9 @@
 pipeline {
     agent { 
-        docker { image 'salesforce/salesforcedx' } 
+        docker { 
+            image 'salesforce/salesforcedx'
+            args '-e HOME=/tmp'
+        } 
     }
     environment {
         REPO_URL = "https://github.com/marioconcilio/sfdc/commit/"
