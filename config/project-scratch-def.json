@@ -1,0 +1,20 @@
+{
+  "orgName": "Developer name",
+  "edition": "Enterprise",
+  "language": "en_US",
+  "features": [
+    "AddCustomApps:30", 
+    "AddCustomTabs:30", 
+    "API", 
+    "AuthorApex",
+    "DebugApex", 
+    "DefaultWorkflowUser",
+    "Entitlements",
+    "LightningSalesConsole", 
+    "LightningServiceConsole", 
+    "LiveAgent",
+    "ProcessBuilder",
+    "ServiceCloud",
+    "Workflow"
+  ]
+}
