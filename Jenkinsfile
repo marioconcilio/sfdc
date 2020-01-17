@@ -6,10 +6,22 @@ pipeline {
         REPO_URL = "https://github.com/marioconcilio/sfdc/commit/"
     }
     stages {
-        stage('build') {
+        stage('Create package') {
             steps {
                 script {
                     slack.notifyStarted()
+                }
+            }
+        }
+        stage('Deploy Dev') {
+            steps {
+                script {
+                    withCredentials([file(credentialsId: 'sfdc-dev1-key', variable: 'KEY')]) {
+                        withCredentials([usernamePassword(credentialsId: 'sfdc-dev1-credentials', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+                            sfdx.authDev(USERNAME, PASSWORD, KEY)
+                        }
+                    }
+
                     sh 'echo Hello world!'
                 }
             }
