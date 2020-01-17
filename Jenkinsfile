@@ -113,9 +113,6 @@ pipeline {
         }
     }
     post {
-        always {
-            deleteDir()
-        }
         success {
             script {
                 slack.notifySuccess()
@@ -135,6 +132,9 @@ pipeline {
             script {
                 slack.notifyAborted()
             }
+        }
+        cleanup {
+            deleteDir()
         }
     }
 }
