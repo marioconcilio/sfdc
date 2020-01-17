@@ -113,6 +113,9 @@ pipeline {
         }
     }
     post {
+        always {
+            deleteDir()
+        }
         success {
             script {
                 slack.notifySuccess()
