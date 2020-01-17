@@ -36,7 +36,7 @@ pipeline {
                 }
             }
         }
-        stage('Deploy to Dev') {
+        stage('Dev: Deploy') {
             when {
                 branch 'develop'
                 expression { utils.hasPackage() }
@@ -57,7 +57,7 @@ pipeline {
                 }
             }
         }
-        stage('Apply destructive package Dev') {
+        stage('Dev: Destructive package') {
             when {
                 branch 'develop'
                 expression { utils.hasDestructivePackage() }
@@ -75,6 +75,39 @@ pipeline {
             post {
                 always {
                     rchiveArtifacts artifacts: "$SF_DESTRUCTIVE_PKG", onlyIfSuccessful: false, allowEmptyArchive: true
+                }
+            }
+        }
+        stage('UAT: Deploy') {
+            when {
+                branch 'uat'
+                expression { utils.hasPackage() }
+            }
+            steps {
+                script {
+                    sh 'echo Deploying to uat'
+                } 
+            }
+        }
+        stage('UAT: Destructive package') {
+            when {
+                branch 'uat'
+                expression { utils.hasDestructivePackage() }
+            }
+            steps {
+                script {
+                    sh 'echo Applying destructive package on uat'
+                }
+            }
+        }
+        stage('Prd: Deploy') {
+            when {
+                branch 'master'
+                expression { utils.hasPackage() }
+            }
+            steps {
+                script {
+                    sh 'echo Deploying to prod'
                 }
             }
         }
