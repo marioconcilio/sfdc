@@ -133,5 +133,8 @@ pipeline {
                 slack.notifyAborted()
             }
         }
+        cleanup {
+            deleteDir()
+        }
     }
 }
